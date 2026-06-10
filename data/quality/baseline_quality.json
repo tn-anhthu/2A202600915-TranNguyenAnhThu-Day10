@@ -1,0 +1,37 @@
+{
+  "report_name": "baseline",
+  "total_rows": 23,
+  "passed": true,
+  "checks": [
+    {
+      "name": "row_count",
+      "passed": true,
+      "detail": "23 rows (min 4)"
+    },
+    {
+      "name": "paper_id_not_null",
+      "passed": true,
+      "detail": "0 null or empty paper_id values"
+    },
+    {
+      "name": "paper_id_unique",
+      "passed": true,
+      "detail": "0 duplicate paper_id values"
+    },
+    {
+      "name": "title_not_null",
+      "passed": true,
+      "detail": "0 null or empty titles"
+    },
+    {
+      "name": "summary_length",
+      "passed": true,
+      "detail": "min 1037 chars (threshold 20)"
+    },
+    {
+      "name": "freshness",
+      "passed": true,
+      "detail": "0/23 rows older than 180 days"
+    }
+  ]
+}

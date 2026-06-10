@@ -1,0 +1,218 @@
+[
+  {
+    "id": "q001",
+    "question_type": "summary",
+    "question": "What is the paper 'Operationalizing Reliability Gaps in Large Language Models: A Semi-Systematic Evidence Map of Reasoning, Factuality, Evaluation, and Retrieval-Augmented Generation' about?",
+    "ground_truth": "Large language models (LLMs) increasingly support reasoning, question answering, decision support, and retrieval-augmented knowledge work.",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-9882260/v1"
+    ]
+  },
+  {
+    "id": "q002",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Operationalizing Reliability Gaps in Large Language Models: A Semi-Systematic Evidence Map of Reasoning, Factuality, Evaluation, and Retrieval-Augmented Generation'?",
+    "ground_truth": "Kushal Budha, Nikesh Lagun",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-9882260/v1"
+    ]
+  },
+  {
+    "id": "q003",
+    "question_type": "date",
+    "question": "When was 'Operationalizing Reliability Gaps in Large Language Models: A Semi-Systematic Evidence Map of Reasoning, Factuality, Evaluation, and Retrieval-Augmented Generation' published?",
+    "ground_truth": "2026-06-02",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-9882260/v1"
+    ]
+  },
+  {
+    "id": "q004",
+    "question_type": "summary",
+    "question": "What is the paper 'Hybrid Graph Neural Network and Large Language Model Framework for Robust Knowledge Graph Question Answering via Retrieval-Augmented Generation' about?",
+    "ground_truth": "Knowledge graphs (KGs) hold facts about the world as connected triples, and they have become a backbone for any system that needs to reason over linked information.",
+    "ground_truth_doc_ids": [
+      "10.22214/ijraset.2026.82233"
+    ]
+  },
+  {
+    "id": "q005",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Hybrid Graph Neural Network and Large Language Model Framework for Robust Knowledge Graph Question Answering via Retrieval-Augmented Generation'?",
+    "ground_truth": "Sohail Khan",
+    "ground_truth_doc_ids": [
+      "10.22214/ijraset.2026.82233"
+    ]
+  },
+  {
+    "id": "q006",
+    "question_type": "date",
+    "question": "When was 'Hybrid Graph Neural Network and Large Language Model Framework for Robust Knowledge Graph Question Answering via Retrieval-Augmented Generation' published?",
+    "ground_truth": "2026-05-31",
+    "ground_truth_doc_ids": [
+      "10.22214/ijraset.2026.82233"
+    ]
+  },
+  {
+    "id": "q007",
+    "question_type": "summary",
+    "question": "What is the paper '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine' about?",
+    "ground_truth": "Introduction While Large Language Models (LLMs) offer generative capabilities, generic models often lack domain-specific grounding, leading to hallucinations in high-stakes contexts.",
+    "ground_truth_doc_ids": [
+      "10.1093/sleep/zsag091.0346"
+    ]
+  },
+  {
+    "id": "q008",
+    "question_type": "authors",
+    "question": "Who authored the paper '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine'?",
+    "ground_truth": "Joseph Cheung, Pengze Li, Anshum Patel, SaiKrishna Vallamchetla, Het Contractor, Hayden Heninger, Cui Tao",
+    "ground_truth_doc_ids": [
+      "10.1093/sleep/zsag091.0346"
+    ]
+  },
+  {
+    "id": "q009",
+    "question_type": "date",
+    "question": "When was '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine' published?",
+    "ground_truth": "2026-05-01",
+    "ground_truth_doc_ids": [
+      "10.1093/sleep/zsag091.0346"
+    ]
+  },
+  {
+    "id": "q010",
+    "question_type": "summary",
+    "question": "What is the paper 'Pioneering agentic retrieval-augmented generation in software quality: a novel framework for code smell detection <i>via</i> dynamic retrieval' about?",
+    "ground_truth": "Code smells\u2014subtle indicators of poor design choices\u2014pose significant challenges to software maintainability and readability, particularly in dynamic languages such as Python.",
+    "ground_truth_doc_ids": [
+      "10.7717/peerj-cs.3642"
+    ]
+  },
+  {
+    "id": "q011",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Pioneering agentic retrieval-augmented generation in software quality: a novel framework for code smell detection <i>via</i> dynamic retrieval'?",
+    "ground_truth": "Bushra Aljohani, Abdulmajeed Aljuhani",
+    "ground_truth_doc_ids": [
+      "10.7717/peerj-cs.3642"
+    ]
+  },
+  {
+    "id": "q012",
+    "question_type": "date",
+    "question": "When was 'Pioneering agentic retrieval-augmented generation in software quality: a novel framework for code smell detection <i>via</i> dynamic retrieval' published?",
+    "ground_truth": "2026-03-04",
+    "ground_truth_doc_ids": [
+      "10.7717/peerj-cs.3642"
+    ]
+  },
+  {
+    "id": "q013",
+    "question_type": "summary",
+    "question": "What is the paper 'Clinical Large Language Models with Multi-Stage Instruction Tuning and Advanced Retrieval-Augmented Generation' about?",
+    "ground_truth": "The demand for efficient and accurate Clinical Decision Support Systems (CDSS) is growing rapidly, driven by the escalating volume of medical data.",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202602.0996.v1"
+    ]
+  },
+  {
+    "id": "q014",
+    "question_type": "authors",
+    "question": "Who authored the paper 'Clinical Large Language Models with Multi-Stage Instruction Tuning and Advanced Retrieval-Augmented Generation'?",
+    "ground_truth": "Donald Martin, Blake Bowman",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202602.0996.v1"
+    ]
+  },
+  {
+    "id": "q015",
+    "question_type": "date",
+    "question": "When was 'Clinical Large Language Models with Multi-Stage Instruction Tuning and Advanced Retrieval-Augmented Generation' published?",
+    "ground_truth": "2026-02-12",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202602.0996.v1"
+    ]
+  },
+  {
+    "id": "q016",
+    "question_type": "summary",
+    "question": "What is the paper 'A large language model-based framework with retrieval-augmented generation for automated building energy modeling' about?",
+    "ground_truth": "Building energy models (BEMs) are crucial for design and analysis but often require considerable time and expertise due to reliance on specialized software and manual configuration.",
+    "ground_truth_doc_ids": [
+      "10.1051/e3sconf/202668908004"
+    ]
+  },
+  {
+    "id": "q017",
+    "question_type": "authors",
+    "question": "Who authored the paper 'A large language model-based framework with retrieval-augmented generation for automated building energy modeling'?",
+    "ground_truth": "Yake Zhang, Peng Xu",
+    "ground_truth_doc_ids": [
+      "10.1051/e3sconf/202668908004"
+    ]
+  },
+  {
+    "id": "q018",
+    "question_type": "date",
+    "question": "When was 'A large language model-based framework with retrieval-augmented generation for automated building energy modeling' published?",
+    "ground_truth": "2026-01-01",
+    "ground_truth_doc_ids": [
+      "10.1051/e3sconf/202668908004"
+    ]
+  },
+  {
+    "id": "q019",
+    "question_type": "summary",
+    "question": "What is the paper 'A Survey of Agentic GraphRAG: From Retrieval-augmented Generation to Graph-native Agents' about?",
+    "ground_truth": "&lt;div&gt; This survey provides a comprehensive analysis of Agentic GraphRAG, an emerging paradigm that integrates Graph-based Retrieval-Augmented Generation (RAG) with Agentic RAG.&amp;nbsp;&lt;span&gt;While large language models know a lot, their knowledge is frozen at training time and they often suffer from hallucinations.",
+    "ground_truth_doc_ids": [
+      "10.2139/ssrn.6713979"
+    ]
+  },
+  {
+    "id": "q020",
+    "question_type": "authors",
+    "question": "Who authored the paper 'A Survey of Agentic GraphRAG: From Retrieval-augmented Generation to Graph-native Agents'?",
+    "ground_truth": "Zihan Chen, Lei Zheng, Di Zhu",
+    "ground_truth_doc_ids": [
+      "10.2139/ssrn.6713979"
+    ]
+  },
+  {
+    "id": "q021",
+    "question_type": "date",
+    "question": "When was 'A Survey of Agentic GraphRAG: From Retrieval-augmented Generation to Graph-native Agents' published?",
+    "ground_truth": "2026-01-01",
+    "ground_truth_doc_ids": [
+      "10.2139/ssrn.6713979"
+    ]
+  },
+  {
+    "id": "q022",
+    "question_type": "summary",
+    "question": "What is the paper 'AI-Powered Smart Advisory System for Precision Agriculture Using Large Language Models and Retrieval-Augmented Generation' about?",
+    "ground_truth": "An AI-powered smart advisory system for Precision Agriculture leveraging Large Language Models and Retrieval-Augmented Generation is presented in this paper.",
+    "ground_truth_doc_ids": [
+      "10.2139/ssrn.6761739"
+    ]
+  },
+  {
+    "id": "q023",
+    "question_type": "authors",
+    "question": "Who authored the paper 'AI-Powered Smart Advisory System for Precision Agriculture Using Large Language Models and Retrieval-Augmented Generation'?",
+    "ground_truth": "Jahnavi Bellapukonda",
+    "ground_truth_doc_ids": [
+      "10.2139/ssrn.6761739"
+    ]
+  },
+  {
+    "id": "q024",
+    "question_type": "date",
+    "question": "When was 'AI-Powered Smart Advisory System for Precision Agriculture Using Large Language Models and Retrieval-Augmented Generation' published?",
+    "ground_truth": "2026-01-01",
+    "ground_truth_doc_ids": [
+      "10.2139/ssrn.6761739"
+    ]
+  }
+]
