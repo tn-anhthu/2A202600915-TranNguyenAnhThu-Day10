@@ -401,6 +401,84 @@
       border-left: 4px solid var(--fail);
     }
 
+    /* ── Dimension cards (6-dim quality) ── */
+    .dim-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1rem;
+    }
+
+    .dim-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem 1rem;
+    }
+
+    .dim-pass { border-left: 5px solid var(--pass); }
+    .dim-fail { border-left: 5px solid var(--fail); }
+
+    .dim-header {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      margin-bottom: .5rem;
+    }
+
+    .dim-icon { font-size: 1.3rem; flex-shrink: 0; line-height: 1; }
+
+    .dim-name {
+      font-weight: bold;
+      font-size: .9rem;
+      color: var(--imp);
+      line-height: 1.2;
+    }
+
+    .dim-desc {
+      font-size: .74rem;
+      color: var(--txt);
+    }
+
+    .dim-score {
+      margin-left: auto;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--pass);
+      flex-shrink: 0;
+    }
+
+    .dim-fail .dim-score { color: var(--fail); }
+
+    .dim-bar-track {
+      height: 6px;
+      background: var(--border);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-bottom: .6rem;
+    }
+
+    .dim-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+    }
+
+    .dim-checks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .dim-checks li {
+      font-size: .76rem;
+      color: var(--txt);
+      padding: .15rem 0;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+
+    .chk-pass::before { content: '✓ '; position: absolute; left: 0; color: var(--pass); font-weight: bold; }
+    .chk-fail::before { content: '✗ '; position: absolute; left: 0; color: var(--fail); font-weight: bold; }
+
     /* ── Footer ── */
     footer {
       text-align: center;
@@ -508,47 +586,128 @@
 
     <!-- ══════════ BASELINE QUALITY ══════════ -->
     <section>
-      <h2>③ Baseline Data Quality</h2>
-      <div class="q-grid">
-        <div class="q-card pass-card"><span class="q-icon">✅</span>
-          <div>
-            <div class="q-name">row_count</div>
-            <div class="q-detail">23 rows (min 4)</div>
-          </div>
-        </div>
-        <div class="q-card pass-card"><span class="q-icon">✅</span>
-          <div>
-            <div class="q-name">paper_id_not_null</div>
-            <div class="q-detail">0 null or empty values</div>
-          </div>
-        </div>
-        <div class="q-card pass-card"><span class="q-icon">✅</span>
-          <div>
-            <div class="q-name">paper_id_unique</div>
-            <div class="q-detail">0 duplicates</div>
-          </div>
-        </div>
-        <div class="q-card pass-card"><span class="q-icon">✅</span>
-          <div>
-            <div class="q-name">title_not_null</div>
-            <div class="q-detail">0 null or empty titles</div>
-          </div>
-        </div>
-        <div class="q-card pass-card"><span class="q-icon">✅</span>
-          <div>
-            <div class="q-name">summary_length</div>
-            <div class="q-detail">min 1037 chars (threshold 20)</div>
-          </div>
-        </div>
-        <div class="q-card pass-card"><span class="q-icon">✅</span>
-          <div>
-            <div class="q-name">freshness</div>
-            <div class="q-detail">0/23 rows older than 180 days</div>
-          </div>
-        </div>
-      </div>
+      <h2>③ Baseline Data Quality — 6 Dimensions</h2>
+      <p style="font-size:.84rem;color:var(--txt);margin-bottom:1.2rem">
+        All 27 checks across 6 quality dimensions pass on the clean baseline dataset.
+      </p>
 
-      <div style="margin-top:1rem">
+      <div class="dim-grid">
+
+        <!-- Completeness -->
+        <div class="dim-card dim-pass">
+          <div class="dim-header">
+            <span class="dim-icon">📋</span>
+            <div>
+              <div class="dim-name">Completeness</div>
+              <div class="dim-desc">No missing records / fields</div>
+            </div>
+            <span class="dim-score">1.00</span>
+          </div>
+          <div class="dim-bar-track"><div class="dim-bar-fill" style="width:100%;background:var(--pass)"></div></div>
+          <ul class="dim-checks">
+            <li class="chk-pass">row_count — 23 rows (min 4)</li>
+            <li class="chk-pass">null_rate per field — 0.0% for all 6 key fields</li>
+            <li class="chk-pass">all_key_fields_complete_rate — 100.0% rows fully populated</li>
+          </ul>
+        </div>
+
+        <!-- Accuracy -->
+        <div class="dim-card dim-pass">
+          <div class="dim-header">
+            <span class="dim-icon">🎯</span>
+            <div>
+              <div class="dim-name">Accuracy</div>
+              <div class="dim-desc">Data conforms to source &amp; business rules</div>
+            </div>
+            <span class="dim-score">1.00</span>
+          </div>
+          <div class="dim-bar-track"><div class="dim-bar-fill" style="width:100%;background:var(--pass)"></div></div>
+          <ul class="dim-checks">
+            <li class="chk-pass">doi_format_valid_rate — 100.0% match <code>10.xxxx/…</code></li>
+            <li class="chk-pass">abs_url_http_rate — 100.0% have http/https schema</li>
+            <li class="chk-pass">published_not_future_rate — 100.0% dates ≤ today</li>
+            <li class="chk-pass">summary_min_words — min 132 words (threshold 10)</li>
+          </ul>
+        </div>
+
+        <!-- Consistency -->
+        <div class="dim-card dim-pass">
+          <div class="dim-header">
+            <span class="dim-icon">🔗</span>
+            <div>
+              <div class="dim-name">Consistency</div>
+              <div class="dim-desc">Same format across all records</div>
+            </div>
+            <span class="dim-score">1.00</span>
+          </div>
+          <div class="dim-bar-track"><div class="dim-bar-fill" style="width:100%;background:var(--pass)"></div></div>
+          <ul class="dim-checks">
+            <li class="chk-pass">date_format_consistent — 100.0% match YYYY-MM-DD</li>
+            <li class="chk-pass">summary_no_residual_xml — 100.0% XML-tag-free</li>
+            <li class="chk-pass">abs_url_doi_consistent_rate — 100.0% URL aligns with DOI</li>
+          </ul>
+        </div>
+
+        <!-- Timeliness -->
+        <div class="dim-card dim-pass">
+          <div class="dim-header">
+            <span class="dim-icon">⏱️</span>
+            <div>
+              <div class="dim-name">Timeliness</div>
+              <div class="dim-desc">Data is fresh enough for the use case</div>
+            </div>
+            <span class="dim-score">1.00</span>
+          </div>
+          <div class="dim-bar-track"><div class="dim-bar-fill" style="width:100%;background:var(--pass)"></div></div>
+          <ul class="dim-checks">
+            <li class="chk-pass">stale_row_rate — 0.0% older than 180 days</li>
+            <li class="chk-pass">max_age_days — 173 days (threshold 180)</li>
+            <li class="chk-pass">mean_age_days — 106.0 days (threshold 180)</li>
+            <li class="chk-pass">last_updated_timestamp — 2026-06-02</li>
+          </ul>
+        </div>
+
+        <!-- Validity -->
+        <div class="dim-card dim-pass">
+          <div class="dim-header">
+            <span class="dim-icon">✔️</span>
+            <div>
+              <div class="dim-name">Validity</div>
+              <div class="dim-desc">Correct format &amp; domain ranges</div>
+            </div>
+            <span class="dim-score">1.00</span>
+          </div>
+          <div class="dim-bar-track"><div class="dim-bar-fill" style="width:100%;background:var(--pass)"></div></div>
+          <ul class="dim-checks">
+            <li class="chk-pass">doi_regex_valid_rate — 100.0% match regex</li>
+            <li class="chk-pass">abs_url_schema_valid — 100.0% http/https</li>
+            <li class="chk-pass">pdf_url_schema_valid — 100.0% http/https</li>
+            <li class="chk-pass">published_date_range_valid — 100.0% in [2000, today]</li>
+            <li class="chk-pass">summary_chars_range_valid — 100.0% in [20, 50 000]; min=1037</li>
+          </ul>
+        </div>
+
+        <!-- Uniqueness -->
+        <div class="dim-card dim-pass">
+          <div class="dim-header">
+            <span class="dim-icon">🔑</span>
+            <div>
+              <div class="dim-name">Uniqueness</div>
+              <div class="dim-desc">No duplicates / dedup rate</div>
+            </div>
+            <span class="dim-score">1.00</span>
+          </div>
+          <div class="dim-bar-track"><div class="dim-bar-fill" style="width:100%;background:var(--pass)"></div></div>
+          <ul class="dim-checks">
+            <li class="chk-pass">paper_id_unique_rate — 100.0% (0 duplicates)</li>
+            <li class="chk-pass">title_unique_rate — 100.0% (0 duplicates)</li>
+            <li class="chk-pass">dedup_rate — 100.00% (threshold 99%)</li>
+          </ul>
+        </div>
+
+      </div><!-- /dim-grid -->
+
+      <div style="margin-top:1.4rem">
         <h3>Data Freshness</h3>
         <div class="freshness-row">
           <div class="fresh-card fresh-ok">
@@ -753,11 +912,19 @@
 
     <!-- ══════════ QUALITY COMPARISON TABLE ══════════ -->
     <section>
-      <h2>⑥ Data Quality — Three-Way Comparison</h2>
+      <h2>⑥ Data Quality — 6-Dimension Scorecard</h2>
+      <p style="font-size:.84rem;color:var(--txt);margin-bottom:1.2rem">
+        Each cell shows the dimension score (0–1) and pass/fail status across the three pipeline stages.
+        Corruption causes <strong style="color:var(--fail)">5 of 6 dimensions</strong> to degrade;
+        repair restores all to baseline.
+      </p>
+
+      <!-- Scorecard table -->
       <table class="q-compare">
         <thead>
           <tr>
-            <th>Check</th>
+            <th>Dimension</th>
+            <th>Checks</th>
             <th>Baseline</th>
             <th>Corrupted</th>
             <th>Repaired</th>
@@ -765,49 +932,125 @@
         </thead>
         <tbody>
           <tr>
-            <td><code>row_count</code></td>
-            <td><span class="badge-pass">PASS (23)</span></td>
-            <td><span class="badge-pass">PASS (21)</span></td>
-            <td><span class="badge-pass">PASS (23)</span></td>
+            <td><strong>📋 Completeness</strong><br/><small>NULL %, row count</small></td>
+            <td>8</td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
+            <td><span class="badge-fail">0.75 ❌</span></td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
           </tr>
           <tr>
-            <td><code>paper_id_not_null</code></td>
-            <td><span class="badge-pass">PASS</span></td>
-            <td><span class="badge-pass">PASS</span></td>
-            <td><span class="badge-pass">PASS</span></td>
+            <td><strong>🎯 Accuracy</strong><br/><small>DOI format, URL, dates, words</small></td>
+            <td>4</td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
+            <td><span class="badge-fail">0.75 ❌</span></td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
           </tr>
           <tr>
-            <td><code>paper_id_unique</code></td>
-            <td><span class="badge-pass">PASS</span></td>
-            <td><span class="badge-fail">FAIL (2 dups)</span></td>
-            <td><span class="badge-pass">PASS</span></td>
+            <td><strong>🔗 Consistency</strong><br/><small>Date format, no XML, URL–DOI align</small></td>
+            <td>3</td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
           </tr>
           <tr>
-            <td><code>title_not_null</code></td>
-            <td><span class="badge-pass">PASS</span></td>
-            <td><span class="badge-pass">PASS</span></td>
-            <td><span class="badge-pass">PASS</span></td>
+            <td><strong>⏱️ Timeliness</strong><br/><small>Max/mean age, stale rate, last updated</small></td>
+            <td>4</td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
+            <td><span class="badge-fail">0.25 ❌</span></td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
           </tr>
           <tr>
-            <td><code>summary_length</code></td>
-            <td><span class="badge-pass">PASS (min 1037)</span></td>
-            <td><span class="badge-fail">FAIL (min 0)</span></td>
-            <td><span class="badge-pass">PASS (min 1037)</span></td>
+            <td><strong>✔️ Validity</strong><br/><small>Regex, range checks, URL schema</small></td>
+            <td>5</td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
+            <td><span class="badge-fail">0.80 ❌</span></td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
           </tr>
           <tr>
-            <td><code>freshness</code></td>
-            <td><span class="badge-pass">PASS (0 stale)</span></td>
-            <td><span class="badge-fail">FAIL (2 stale)</span></td>
-            <td><span class="badge-pass">PASS (0 stale)</span></td>
+            <td><strong>🔑 Uniqueness</strong><br/><small>Dedup rate, composite key</small></td>
+            <td>3</td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
+            <td><span class="badge-fail">0.00 ❌</span></td>
+            <td><span class="badge-pass">1.00 ✅</span></td>
           </tr>
-          <tr>
+          <tr style="font-weight:bold">
             <td><strong>Overall</strong></td>
-            <td><span class="badge-pass">✅ ALL PASS</span></td>
-            <td><span class="badge-fail">❌ 3 FAIL</span></td>
-            <td><span class="badge-pass">✅ ALL PASS</span></td>
+            <td><strong>27</strong></td>
+            <td><span class="badge-pass">✅ 27/27</span></td>
+            <td><span class="badge-fail">❌ 17/27</span></td>
+            <td><span class="badge-pass">✅ 27/27</span></td>
           </tr>
         </tbody>
       </table>
+
+      <!-- Per-dimension score bars -->
+      <h3 style="margin-top:1.6rem">Dimension Score — Corrupted vs Repaired</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem">
+
+        <div>
+          <div class="metric-name">📋 Completeness</div>
+          <div class="bars">
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Corrupted</div><div class="bar-track"><div class="bar-fill fill-corr" style="width:75%"></div></div><div class="bar-pct">0.75</div></div>
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Repaired</div><div class="bar-track"><div class="bar-fill fill-rep" style="width:100%"></div></div><div class="bar-pct">1.00</div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="metric-name">🎯 Accuracy</div>
+          <div class="bars">
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Corrupted</div><div class="bar-track"><div class="bar-fill fill-corr" style="width:75%"></div></div><div class="bar-pct">0.75</div></div>
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Repaired</div><div class="bar-track"><div class="bar-fill fill-rep" style="width:100%"></div></div><div class="bar-pct">1.00</div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="metric-name">🔗 Consistency</div>
+          <div class="bars">
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Corrupted</div><div class="bar-track"><div class="bar-fill fill-rep" style="width:100%"></div></div><div class="bar-pct">1.00</div></div>
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Repaired</div><div class="bar-track"><div class="bar-fill fill-rep" style="width:100%"></div></div><div class="bar-pct">1.00</div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="metric-name">⏱️ Timeliness</div>
+          <div class="bars">
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Corrupted</div><div class="bar-track"><div class="bar-fill fill-corr" style="width:25%"></div></div><div class="bar-pct">0.25</div></div>
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Repaired</div><div class="bar-track"><div class="bar-fill fill-rep" style="width:100%"></div></div><div class="bar-pct">1.00</div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="metric-name">✔️ Validity</div>
+          <div class="bars">
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Corrupted</div><div class="bar-track"><div class="bar-fill fill-corr" style="width:80%"></div></div><div class="bar-pct">0.80</div></div>
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Repaired</div><div class="bar-track"><div class="bar-fill fill-rep" style="width:100%"></div></div><div class="bar-pct">1.00</div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="metric-name">🔑 Uniqueness</div>
+          <div class="bars">
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Corrupted</div><div class="bar-track"><div class="bar-fill fill-corr" style="width:0%"></div></div><div class="bar-pct">0.00</div></div>
+            <div class="bar-wrap"><div class="bar-label" style="width:78px">Repaired</div><div class="bar-track"><div class="bar-fill fill-rep" style="width:100%"></div></div><div class="bar-pct">1.00</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Corrupted failures detail -->
+      <h3 style="margin-top:1.6rem">Corrupted Dataset — Failed Checks Detail</h3>
+      <div class="q-grid" style="margin-top:.7rem">
+        <div class="q-card fail-card"><span class="q-icon">❌</span><div><div class="q-name">null_rate_summary</div><div class="q-detail">19.0% null/empty summaries (blank_summary corruption)</div></div></div>
+        <div class="q-card fail-card"><span class="q-icon">❌</span><div><div class="q-name">all_key_fields_complete_rate</div><div class="q-detail">81.0% rows fully populated (threshold 90%)</div></div></div>
+        <div class="q-card fail-card"><span class="q-icon">❌</span><div><div class="q-name">summary_min_words</div><div class="q-detail">min 0 words — blanked summaries contain no words</div></div></div>
+        <div class="q-card fail-card"><span class="q-icon">❌</span><div><div class="q-name">stale_row_rate</div><div class="q-detail">9.5% rows older than 180 days (stale_date corruption)</div></div></div>
+        <div class="q-card fail-card"><span class="q-icon">❌</span><div><div class="q-name">max_age_days</div><div class="q-detail">max age = 2557 days — 2019 date injected</div></div></div>
+        <div class="q-card fail-card"><span class="q-icon">❌</span><div><div class="q-name">mean_age_days</div><div class="q-detail">mean age = 344.4 days — stale records skew the mean</div></div></div>
+        <div class="q-card fail-card"><span class="q-icon">❌</span><div><div class="q-name">summary_chars_range_valid</div><div class="q-detail">81.0% in valid range — blanked rows have 0 chars</div></div></div>
+        <div class="q-card fail-card"><span class="q-icon">❌</span><div><div class="q-name">paper_id_unique_rate</div><div class="q-detail">90.5% unique — 2 duplicate rows added</div></div></div>
+        <div class="q-card fail-card"><span class="q-icon">❌</span><div><div class="q-name">title_unique_rate</div><div class="q-detail">90.5% unique titles (threshold 95%)</div></div></div>
+        <div class="q-card fail-card"><span class="q-icon">❌</span><div><div class="q-name">dedup_rate</div><div class="q-detail">90.48% dedup rate (threshold 99%)</div></div></div>
+      </div>
     </section>
 
     <!-- ══════════ FRESHNESS COMPARISON ══════════ -->

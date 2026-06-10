@@ -2,36 +2,341 @@
   "report_name": "repaired",
   "total_rows": 23,
   "passed": true,
+  "dimensions": {
+    "completeness": {
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "row_count",
+          "passed": true,
+          "detail": "23 rows (min 4)"
+        },
+        {
+          "name": "null_rate_paper_id",
+          "passed": true,
+          "detail": "0.0% null/empty (threshold 0%)"
+        },
+        {
+          "name": "null_rate_title",
+          "passed": true,
+          "detail": "0.0% null/empty (threshold 0%)"
+        },
+        {
+          "name": "null_rate_summary",
+          "passed": true,
+          "detail": "0.0% null/empty (threshold 0%)"
+        },
+        {
+          "name": "null_rate_published",
+          "passed": true,
+          "detail": "0.0% null/empty (threshold 0%)"
+        },
+        {
+          "name": "null_rate_abs_url",
+          "passed": true,
+          "detail": "0.0% null/empty (threshold 0%)"
+        },
+        {
+          "name": "null_rate_authors_joined",
+          "passed": true,
+          "detail": "0.0% null/empty (threshold 0%)"
+        },
+        {
+          "name": "all_key_fields_complete_rate",
+          "passed": true,
+          "detail": "100.0% rows have all key fields (threshold 90%)"
+        }
+      ]
+    },
+    "accuracy": {
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "doi_format_valid_rate",
+          "passed": true,
+          "detail": "100.0% paper_ids match DOI pattern (threshold 90%)"
+        },
+        {
+          "name": "abs_url_http_rate",
+          "passed": true,
+          "detail": "100.0% abs_urls have http/https schema (threshold 90%)"
+        },
+        {
+          "name": "published_not_future_rate",
+          "passed": true,
+          "detail": "100.0% published dates are not in the future (threshold 90%)"
+        },
+        {
+          "name": "summary_min_words",
+          "passed": true,
+          "detail": "min 132 words in summary (threshold 10)"
+        }
+      ]
+    },
+    "consistency": {
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "date_format_consistent",
+          "passed": true,
+          "detail": "100.0% non-empty published dates match YYYY-MM-DD (threshold 95%)"
+        },
+        {
+          "name": "summary_no_residual_xml",
+          "passed": true,
+          "detail": "100.0% summaries are XML-tag-free (threshold 95%)"
+        },
+        {
+          "name": "abs_url_doi_consistent_rate",
+          "passed": true,
+          "detail": "100.0% DOI paper_ids have consistent abs_url (threshold 80%)"
+        }
+      ]
+    },
+    "timeliness": {
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "stale_row_rate",
+          "passed": true,
+          "detail": "0.0% rows older than 180 days (0/23 stale)"
+        },
+        {
+          "name": "max_age_days",
+          "passed": true,
+          "detail": "max age = 173 days (threshold 180)"
+        },
+        {
+          "name": "mean_age_days",
+          "passed": true,
+          "detail": "mean age = 106.0 days (threshold 180)"
+        },
+        {
+          "name": "last_updated_timestamp",
+          "passed": true,
+          "detail": "most recent updated = 2026-06-02"
+        }
+      ]
+    },
+    "validity": {
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "doi_regex_valid_rate",
+          "passed": true,
+          "detail": "100.0% paper_ids match DOI regex (threshold 90%)"
+        },
+        {
+          "name": "abs_url_schema_valid",
+          "passed": true,
+          "detail": "100.0% abs_url have valid http/https schema (threshold 90%)"
+        },
+        {
+          "name": "pdf_url_schema_valid",
+          "passed": true,
+          "detail": "100.0% pdf_url have valid http/https schema (threshold 90%)"
+        },
+        {
+          "name": "published_date_range_valid",
+          "passed": true,
+          "detail": "100.0% published dates in [2000-01-01, today] (threshold 90%)"
+        },
+        {
+          "name": "summary_chars_range_valid",
+          "passed": true,
+          "detail": "100.0% summaries in [20, 50000] chars; min=1037, max=2506"
+        }
+      ]
+    },
+    "uniqueness": {
+      "passed": true,
+      "score": 1.0,
+      "checks": [
+        {
+          "name": "paper_id_unique_rate",
+          "passed": true,
+          "detail": "100.0% unique paper_ids; 0 duplicate(s)"
+        },
+        {
+          "name": "title_unique_rate",
+          "passed": true,
+          "detail": "100.0% unique titles; 0 duplicate(s)"
+        },
+        {
+          "name": "dedup_rate",
+          "passed": true,
+          "detail": "dedup rate = 100.00% (threshold 99%)"
+        }
+      ]
+    }
+  },
   "checks": [
     {
       "name": "row_count",
       "passed": true,
-      "detail": "23 rows (min 4)"
+      "detail": "23 rows (min 4)",
+      "dimension": "completeness"
     },
     {
-      "name": "paper_id_not_null",
+      "name": "null_rate_paper_id",
       "passed": true,
-      "detail": "0 null or empty paper_id values"
+      "detail": "0.0% null/empty (threshold 0%)",
+      "dimension": "completeness"
     },
     {
-      "name": "paper_id_unique",
+      "name": "null_rate_title",
       "passed": true,
-      "detail": "0 duplicate paper_id values"
+      "detail": "0.0% null/empty (threshold 0%)",
+      "dimension": "completeness"
     },
     {
-      "name": "title_not_null",
+      "name": "null_rate_summary",
       "passed": true,
-      "detail": "0 null or empty titles"
+      "detail": "0.0% null/empty (threshold 0%)",
+      "dimension": "completeness"
     },
     {
-      "name": "summary_length",
+      "name": "null_rate_published",
       "passed": true,
-      "detail": "min 1037 chars (threshold 20)"
+      "detail": "0.0% null/empty (threshold 0%)",
+      "dimension": "completeness"
     },
     {
-      "name": "freshness",
+      "name": "null_rate_abs_url",
       "passed": true,
-      "detail": "0/23 rows older than 180 days"
+      "detail": "0.0% null/empty (threshold 0%)",
+      "dimension": "completeness"
+    },
+    {
+      "name": "null_rate_authors_joined",
+      "passed": true,
+      "detail": "0.0% null/empty (threshold 0%)",
+      "dimension": "completeness"
+    },
+    {
+      "name": "all_key_fields_complete_rate",
+      "passed": true,
+      "detail": "100.0% rows have all key fields (threshold 90%)",
+      "dimension": "completeness"
+    },
+    {
+      "name": "doi_format_valid_rate",
+      "passed": true,
+      "detail": "100.0% paper_ids match DOI pattern (threshold 90%)",
+      "dimension": "accuracy"
+    },
+    {
+      "name": "abs_url_http_rate",
+      "passed": true,
+      "detail": "100.0% abs_urls have http/https schema (threshold 90%)",
+      "dimension": "accuracy"
+    },
+    {
+      "name": "published_not_future_rate",
+      "passed": true,
+      "detail": "100.0% published dates are not in the future (threshold 90%)",
+      "dimension": "accuracy"
+    },
+    {
+      "name": "summary_min_words",
+      "passed": true,
+      "detail": "min 132 words in summary (threshold 10)",
+      "dimension": "accuracy"
+    },
+    {
+      "name": "date_format_consistent",
+      "passed": true,
+      "detail": "100.0% non-empty published dates match YYYY-MM-DD (threshold 95%)",
+      "dimension": "consistency"
+    },
+    {
+      "name": "summary_no_residual_xml",
+      "passed": true,
+      "detail": "100.0% summaries are XML-tag-free (threshold 95%)",
+      "dimension": "consistency"
+    },
+    {
+      "name": "abs_url_doi_consistent_rate",
+      "passed": true,
+      "detail": "100.0% DOI paper_ids have consistent abs_url (threshold 80%)",
+      "dimension": "consistency"
+    },
+    {
+      "name": "stale_row_rate",
+      "passed": true,
+      "detail": "0.0% rows older than 180 days (0/23 stale)",
+      "dimension": "timeliness"
+    },
+    {
+      "name": "max_age_days",
+      "passed": true,
+      "detail": "max age = 173 days (threshold 180)",
+      "dimension": "timeliness"
+    },
+    {
+      "name": "mean_age_days",
+      "passed": true,
+      "detail": "mean age = 106.0 days (threshold 180)",
+      "dimension": "timeliness"
+    },
+    {
+      "name": "last_updated_timestamp",
+      "passed": true,
+      "detail": "most recent updated = 2026-06-02",
+      "dimension": "timeliness"
+    },
+    {
+      "name": "doi_regex_valid_rate",
+      "passed": true,
+      "detail": "100.0% paper_ids match DOI regex (threshold 90%)",
+      "dimension": "validity"
+    },
+    {
+      "name": "abs_url_schema_valid",
+      "passed": true,
+      "detail": "100.0% abs_url have valid http/https schema (threshold 90%)",
+      "dimension": "validity"
+    },
+    {
+      "name": "pdf_url_schema_valid",
+      "passed": true,
+      "detail": "100.0% pdf_url have valid http/https schema (threshold 90%)",
+      "dimension": "validity"
+    },
+    {
+      "name": "published_date_range_valid",
+      "passed": true,
+      "detail": "100.0% published dates in [2000-01-01, today] (threshold 90%)",
+      "dimension": "validity"
+    },
+    {
+      "name": "summary_chars_range_valid",
+      "passed": true,
+      "detail": "100.0% summaries in [20, 50000] chars; min=1037, max=2506",
+      "dimension": "validity"
+    },
+    {
+      "name": "paper_id_unique_rate",
+      "passed": true,
+      "detail": "100.0% unique paper_ids; 0 duplicate(s)",
+      "dimension": "uniqueness"
+    },
+    {
+      "name": "title_unique_rate",
+      "passed": true,
+      "detail": "100.0% unique titles; 0 duplicate(s)",
+      "dimension": "uniqueness"
+    },
+    {
+      "name": "dedup_rate",
+      "passed": true,
+      "detail": "dedup rate = 100.00% (threshold 99%)",
+      "dimension": "uniqueness"
     }
   ]
 }
