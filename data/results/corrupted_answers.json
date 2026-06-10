@@ -25,7 +25,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer is empty and provides no information about the paper, while the reference answer gives a brief description. Therefore, it is materially incorrect."
     }
   },
   {
@@ -54,7 +54,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer provides authors 'Dr. Sumalatha P, Manoj Kumar', which do not match the reference answer 'Kushal Budha, Nikesh Lagun'. The answer is materially incorrect."
     }
   },
   {
@@ -83,7 +83,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer provides a date (2019-01-01) that does not match the reference answer (2026-06-02). The publication date is materially incorrect."
     }
   },
   {
@@ -112,7 +112,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer is corrupted with nonsensical characters and the coherent portion does not describe the paper's content as requested. It fails to match the reference answer, which provides a general statement about knowledge graphs. The answer is not materially correct."
     }
   },
   {
@@ -141,7 +141,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer lists Hyewon Lee and Sungsu Lim as authors, while the reference answer states Sohail Khan. The model answer does not match the reference and is therefore incorrect."
     }
   },
   {
@@ -170,7 +170,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer provides a different date (2026-02-26) than the reference answer (2026-05-31), so it is incorrect."
     }
   },
   {
@@ -197,7 +197,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer is identical to the reference answer, providing the same description of the paper's introduction."
     }
   },
   {
@@ -224,7 +224,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer lists all authors exactly as in the reference answer, with no omissions or errors."
     }
   },
   {
@@ -251,7 +251,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer matches the reference answer exactly."
     }
   },
   {
@@ -280,7 +280,7 @@
     "judge": {
       "score": 3,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer includes the exact correct information from the reference answer, but it is preceded by corrupted data ('x\u03a9\u2205 [CORRUPTED_DATA] %&# NaN null undefined'), which reduces its clarity and reliability. The core content is materially correct."
     }
   },
   {
@@ -309,7 +309,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer exactly matches the reference answer, listing both authors correctly."
     }
   },
   {
@@ -338,7 +338,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer matches the reference answer exactly."
     }
   },
   {
@@ -367,7 +367,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer is identical to the reference answer, providing the same information about the paper's focus on the growing demand for CDSS due to increasing medical data."
     }
   },
   {
@@ -396,7 +396,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer matches the reference answer exactly, providing the correct authors."
     }
   },
   {
@@ -425,7 +425,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer matches the reference answer exactly."
     }
   },
   {
@@ -454,7 +454,7 @@
     "judge": {
       "score": 3,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer contains the correct description of the paper, matching the reference answer exactly after the corrupted prefix. However, the presence of corrupted data ('x\u03a9\u2205 [CORRUPTED_DATA] %&# NaN null undefined') makes the response messy and less clear, reducing its quality."
     }
   },
   {
@@ -483,7 +483,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer matches the reference answer exactly, providing the correct authors."
     }
   },
   {
@@ -512,7 +512,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer matches the reference answer exactly."
     }
   },
   {
@@ -541,7 +541,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer is identical to the reference answer, accurately describing the paper's content."
     }
   },
   {
@@ -570,7 +570,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer matches the reference answer exactly, listing the same three authors in the same order."
     }
   },
   {
@@ -599,7 +599,7 @@
     "judge": {
       "score": 1,
       "correct": false,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer states 2019-01-01, which is completely different from the reference answer of 2026-01-01. The publication year is incorrect."
     }
   },
   {
@@ -628,7 +628,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer is identical to the reference answer, providing a materially correct description of the paper."
     }
   },
   {
@@ -657,7 +657,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer matches the reference answer exactly."
     }
   },
   {
@@ -686,7 +686,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "Fallback heuristic judge used because the LLM evaluator was unavailable."
+      "reasoning": "The model answer matches the reference answer exactly."
     }
   }
 ]
